@@ -18,7 +18,7 @@ export const newTask = async (req, res, next) => {
 export const getMyTask = async (req, res, next) => {
   try {
     const userId = req.user._id;
-    const tasks = await Task.findOne({ user: userId });
+    const tasks = await Task.find({ user: userId });
 
     res.status(200).json({
       success: true,
